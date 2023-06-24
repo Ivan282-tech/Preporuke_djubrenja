@@ -36,6 +36,7 @@
             android:id="@+id/broj_parcele"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="Broj parcele" />
         <EditText
             android:id="@+id/tip_zemljista"
@@ -47,31 +48,37 @@
             android:id="@+id/povrsinaHektar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="Povrsina(ha)" />
         <EditText
             android:id="@+id/phVoda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="pH (H20)" />
         <EditText
             android:id="@+id/phKalijevKlorid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="pH(KCI)" />
         <EditText
             android:id="@+id/kalcijevKarbonat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="CaCO3 (%)" />
         <EditText
             android:id="@+id/fosfor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="P (mg/100g Zemlje)" />
         <EditText
             android:id="@+id/kalijum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="K (mg/100g Zemlje)" />
         <EditText
             android:id="@+id/humus"
