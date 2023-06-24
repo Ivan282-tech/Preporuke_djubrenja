@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try{
                     double Humus = Double.parseDouble(humus.getText().toString());
-                    double rezultat = Humus * 0.06;
+                    double rezultat = Humus * 0.07;
                     N.setText(String.valueOf(rezultat));
                 }catch (NumberFormatException e){
                     N.setText("");
