@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/prezime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prezime" />
+        <EditText
+            android:id="@+id/ime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ime" />
+        <EditText
+            android:id="@+id/mesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mesto" />
+        <EditText
+            android:id="@+id/ulica_i_broj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ulica i broj" />
+        <EditText
+            android:id="@+id/broj_parcele"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Broj parcele" />
+        <EditText
+            android:id="@+id/tip_zemljista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tip zemljista"
+            />
+        <EditText
+            android:id="@+id/povrsinaHektar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Povrsina(ha)" />
+        <EditText
+            android:id="@+id/phVoda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="pH (H20)" />
+        <EditText
+            android:id="@+id/phKalijevKlorid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="pH(KCI)" />
+        <EditText
+            android:id="@+id/kalcijevKarbonat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CaCO3 (%)" />
+        <EditText
+            android:id="@+id/fosfor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="P (mg/100g Zemlje)" />
+        <EditText
+            android:id="@+id/kalijum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="K (mg/100g Zemlje)" />
+        <EditText
+            android:id="@+id/humus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Humus (%)" />
+        <EditText
+            android:id="@+id/N"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:hint="N" />
+        <Spinner
+            android:id="@+id/biljke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/prinosi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/dugmeUnesi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Unesi" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
