@@ -11,35 +11,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Prezime: "/>
         <EditText
             android:id="@+id/prezime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Prezime"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Ime: "/>
         <EditText
             android:id="@+id/ime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ime"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Mesto"/>
         <EditText
             android:id="@+id/mesto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mesto"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Ulica i broj: "/>
         <EditText
             android:id="@+id/ulica_i_broj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ulica i broj"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Broj parcele:"/>
         <EditText
             android:id="@+id/broj_parcele"
             android:layout_width="match_parent"
@@ -47,14 +72,24 @@
             android:inputType="number"
             android:hint="Broj parcele"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Tip zemljišta: "/>
         <EditText
             android:id="@+id/tip_zemljista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Tip zemljista"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Površina u hektarima:"/>
         <EditText
             android:id="@+id/povrsinaHektar"
             android:layout_width="match_parent"
@@ -62,7 +97,12 @@
             android:inputType="numberDecimal"
             android:hint="Povrsina(ha)"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="ph Vode:"/>
         <EditText
             android:id="@+id/phVoda"
             android:layout_width="match_parent"
@@ -70,7 +110,12 @@
             android:inputType="numberDecimal"
             android:hint="pH (H20)"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="pH kalijev karbonat:"/>
         <EditText
             android:id="@+id/phKalijevKlorid"
             android:layout_width="match_parent"
@@ -78,7 +123,12 @@
             android:inputType="numberDecimal"
             android:hint="pH(KCI)"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Kalcijev karbonat:"/>
         <EditText
             android:id="@+id/kalcijevKarbonat"
             android:layout_width="match_parent"
@@ -86,7 +136,12 @@
             android:inputType="numberDecimal"
             android:hint="CaCO3 (%)"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Fosfor:"/>
         <EditText
             android:id="@+id/fosfor"
             android:layout_width="match_parent"
@@ -94,7 +149,12 @@
             android:inputType="numberDecimal"
             android:hint="P (mg/100g Zemlje)"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Kalijum:"/>
         <EditText
             android:id="@+id/kalijum"
             android:layout_width="match_parent"
@@ -102,7 +162,12 @@
             android:inputType="numberDecimal"
             android:hint="K (mg/100g Zemlje)"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Humus:"/>
         <EditText
             android:id="@+id/humus"
             android:layout_width="match_parent"
@@ -118,7 +183,12 @@
             android:inputType="none"
             android:hint="N"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Kulture: "/>
         <Spinner
             android:id="@+id/biljke"
             android:layout_width="match_parent"
@@ -129,7 +199,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textSize="18dp"
-            android:text="Mogući prinosi (t/ha)"/>
+            android:text="Mogući prinosi (t/ha):"/>
         <Spinner
             android:id="@+id/prinosi"
             android:layout_width="match_parent"

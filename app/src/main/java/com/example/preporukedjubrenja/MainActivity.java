@@ -115,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
-
                         prinosi = findViewById(R.id.prinosi);
                         ArrayAdapter<Float> prinosiAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, listaBrojeva);
                         prinosi.setAdapter(prinosiAdapter);
