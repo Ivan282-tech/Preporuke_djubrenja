@@ -49,31 +49,31 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         String insertBiljka9 = "INSERT INTO Biljke (_id, naziv) VALUES(9, 'ARPADŽIK');";
         db.execSQL(insertBiljka9);
 
-        String insertPrinos1 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(1, '4-5-6-7');";
+        String insertPrinos1 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(1, '4 5 6 7');";
         db.execSQL(insertPrinos1);
 
-        String insertPrinos2 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(2, '4-5-6-7');";
+        String insertPrinos2 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(2, '4 5 6 7');";
         db.execSQL(insertPrinos2);
 
-        String insertPrinos3 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(3, '5-6-7-8-9-10');";
+        String insertPrinos3 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(3, '5 6 7 8 9 10');";
         db.execSQL(insertPrinos3);
 
-        String insertPrinos4 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(4, '2-2.4-2.8-3');";
+        String insertPrinos4 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(4, '2 2.4 2.8 3');";
         db.execSQL(insertPrinos4);
 
-        String insertPrinos5 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(5, '1.8-2.2-2.6-3');";
+        String insertPrinos5 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(5, '1.8 2.2 2.6 3');";
         db.execSQL(insertPrinos5);
 
-        String insertPrinos6 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(6, '35-40-45-50');";
+        String insertPrinos6 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(6, '35 40 45 50');";
         db.execSQL(insertPrinos6);
 
-        String insertPrinos7 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(7, '50-60-70-80-90-100');";
+        String insertPrinos7 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(7, '50 60 70 80 90 100');";
         db.execSQL(insertPrinos7);
 
         String insertPrinos8 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(8, '9');";
         db.execSQL(insertPrinos8);
 
-        String insertPrinos9 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(7, '5');";
+        String insertPrinos9 = "INSERT INTO Prinosi(biljka_id, brojevi) VALUES(9, '5');";
         db.execSQL(insertPrinos9);
     }
 
@@ -93,7 +93,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
     public Cursor uzmiPrinos(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT _id, brojevi FROM Prinos WHERE biljka_id = ? ORDER BY 1 ASC";
+        String query = "SELECT brojevi FROM Prinosi WHERE biljka_id = ? ORDER BY 1 ASC";
         Cursor cursor = db.rawQuery(query, new String[] { String.valueOf(id) });
 
         return cursor;

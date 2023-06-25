@@ -16,12 +16,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    Spinner prinosi;
+    Spinner biljke;
+    Button dugme;
+    DataBaseHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,19 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
         EditText humus = findViewById(R.id.humus);
         EditText N = findViewById(R.id.N);
-        Button dugme = findViewById(R.id.dugmeUnesi);
+        dugme = findViewById(R.id.dugmeUnesi);
 
         N.setKeyListener(null);
 
-        Spinner biljke = findViewById(R.id.biljke);
-        Spinner prinosi = findViewById(R.id.prinosi);
+         biljke = findViewById(R.id.biljke);
+         prinosi = findViewById(R.id.prinosi);
 
-        DataBaseHelper helper = new DataBaseHelper(MainActivity.this);
+        helper = new DataBaseHelper(MainActivity.this);
+
 
         Cursor biljkeCursor = helper.uzmiBiljke();
 
-        ArrayList<String> idINaziviBiljaka = new ArrayList<>();
 
+        List<Biljka> biljkeList = new ArrayList<>();
         if (biljkeCursor != null && biljkeCursor.moveToFirst()) {
 
             int columnIndexId = biljkeCursor.getColumnIndex("_id");
@@ -50,18 +56,14 @@ public class MainActivity extends AppCompatActivity {
             do {
                 int idBiljke = biljkeCursor.getInt(columnIndexId);
                 String nazivBiljke = biljkeCursor.getString(columnIndexNaziv);
-                String idINaziv = idBiljke + " - " + nazivBiljke;
-                idINaziviBiljaka.add(idINaziv);
+                Biljka biljka = new Biljka(idBiljke, nazivBiljke);
+                biljkeList.add(biljka);
             } while (biljkeCursor.moveToNext());
         }
 
-            ArrayAdapter<String> biljkeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, idINaziviBiljaka);
+            BiljkaAdapter biljkaAdapter = new BiljkaAdapter(MainActivity.this, biljkeList);
+            biljke.setAdapter(biljkaAdapter);
 
-
-            biljkeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-
-            biljke.setAdapter(biljkeAdapter);
 
             humus.addTextChangedListener(new TextWatcher() {
             @Override
@@ -85,18 +87,51 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        biljke.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Ovdje se izvršava kôd kada se odabere nova vrijednost u Spinneru
+                // Možete dohvatiti odabranu vrijednost i izvršiti potrebne akcije
 
-      biljke.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-          @Override
-          public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Biljka selectedBiljka = (Biljka) parent.getItemAtPosition(position);
+                int selektovaniID = selectedBiljka.getId();
+                helper = new DataBaseHelper(MainActivity.this);
 
-          }
+                Cursor prinosiCursor = helper.uzmiPrinos(selektovaniID);
 
-          @Override
-          public void onNothingSelected(AdapterView<?> adapterView) {
+                if (prinosiCursor != null && prinosiCursor.moveToFirst()) {
 
-          }
-      });
+                    int columnIndexBrojevi= prinosiCursor.getColumnIndex("brojevi");
+                    try {
+                        String brojevi = prinosiCursor.getString(columnIndexBrojevi);
+                        String[] ulaz = brojevi.split(" ");
+                        List<Float> listaBrojeva = new ArrayList<>();
+
+                        for (String brojStr : ulaz) {
+                            try {
+                                float broj = Float.parseFloat(brojStr);
+                                listaBrojeva.add(broj);
+                            } catch (NumberFormatException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        prinosi = findViewById(R.id.prinosi);
+                        ArrayAdapter<Float> prinosiAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, listaBrojeva);
+                        prinosi.setAdapter(prinosiAdapter);
+
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(MainActivity.this, "GREŠKA", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
