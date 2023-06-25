@@ -23,8 +23,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Spinner prinosi;
-    Spinner biljke;
+    Spinner prinosi, prinosi1, prinosi2, prinosi3;
+    Spinner biljke, biljke1, biljke2, biljke3;
     Button dugme;
     DataBaseHelper helper;
     @Override
@@ -39,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
         N.setKeyListener(null);
 
          biljke = findViewById(R.id.biljke);
+         biljke1 = findViewById(R.id.biljke1);
+         biljke2 = findViewById(R.id.biljke2);
+         biljke3 = findViewById(R.id.biljke3);
+
          prinosi = findViewById(R.id.prinosi);
+         prinosi1 = findViewById(R.id.prinosi1);
+         prinosi2 = findViewById(R.id.prinosi2);
+         prinosi3 = findViewById(R.id.prinosi3);
 
         helper = new DataBaseHelper(MainActivity.this);
 
@@ -47,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
         Cursor biljkeCursor = helper.uzmiBiljke();
 
 
+
         List<Biljka> biljkeList = new ArrayList<>();
+
         if (biljkeCursor != null && biljkeCursor.moveToFirst()) {
 
             int columnIndexId = biljkeCursor.getColumnIndex("_id");
@@ -63,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
             BiljkaAdapter biljkaAdapter = new BiljkaAdapter(MainActivity.this, biljkeList);
             biljke.setAdapter(biljkaAdapter);
-
+            biljke1.setAdapter(biljkaAdapter);
+            biljke2.setAdapter(biljkaAdapter);
+            biljke3.setAdapter(biljkaAdapter);
 
             humus.addTextChangedListener(new TextWatcher() {
             @Override
@@ -90,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
         biljke.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Ovdje se izvršava kôd kada se odabere nova vrijednost u Spinneru
-                // Možete dohvatiti odabranu vrijednost i izvršiti potrebne akcije
 
                 Biljka selectedBiljka = (Biljka) parent.getItemAtPosition(position);
                 int selektovaniID = selectedBiljka.getId();
@@ -128,6 +137,126 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        biljke1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                Biljka selectedBiljka = (Biljka) parent.getItemAtPosition(position);
+                int selektovaniID = selectedBiljka.getId();
+                helper = new DataBaseHelper(MainActivity.this);
+
+                Cursor prinosiCursor = helper.uzmiPrinos(selektovaniID);
+
+                if (prinosiCursor != null && prinosiCursor.moveToFirst()) {
+
+                    int columnIndexBrojevi= prinosiCursor.getColumnIndex("brojevi");
+                    try {
+                        String brojevi = prinosiCursor.getString(columnIndexBrojevi);
+                        String[] ulaz = brojevi.split(" ");
+                        List<Float> listaBrojeva = new ArrayList<>();
+
+                        for (String brojStr : ulaz) {
+                            try {
+                                float broj = Float.parseFloat(brojStr);
+                                listaBrojeva.add(broj);
+                            } catch (NumberFormatException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        prinosi1 = findViewById(R.id.prinosi1);
+                        ArrayAdapter<Float> prinosiAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, listaBrojeva);
+                        prinosi1.setAdapter(prinosiAdapter);
+
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(MainActivity.this, "GREŠKA", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        biljke2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                Biljka selectedBiljka = (Biljka) parent.getItemAtPosition(position);
+                int selektovaniID = selectedBiljka.getId();
+                helper = new DataBaseHelper(MainActivity.this);
+
+                Cursor prinosiCursor = helper.uzmiPrinos(selektovaniID);
+
+                if (prinosiCursor != null && prinosiCursor.moveToFirst()) {
+
+                    int columnIndexBrojevi= prinosiCursor.getColumnIndex("brojevi");
+                    try {
+                        String brojevi = prinosiCursor.getString(columnIndexBrojevi);
+                        String[] ulaz = brojevi.split(" ");
+                        List<Float> listaBrojeva = new ArrayList<>();
+
+                        for (String brojStr : ulaz) {
+                            try {
+                                float broj = Float.parseFloat(brojStr);
+                                listaBrojeva.add(broj);
+                            } catch (NumberFormatException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        prinosi2 = findViewById(R.id.prinosi2);
+                        ArrayAdapter<Float> prinosiAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, listaBrojeva);
+                        prinosi2.setAdapter(prinosiAdapter);
+
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(MainActivity.this, "GREŠKA", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        biljke3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                Biljka selectedBiljka = (Biljka) parent.getItemAtPosition(position);
+                int selektovaniID = selectedBiljka.getId();
+                helper = new DataBaseHelper(MainActivity.this);
+
+                Cursor prinosiCursor = helper.uzmiPrinos(selektovaniID);
+
+                if (prinosiCursor != null && prinosiCursor.moveToFirst()) {
+
+                    int columnIndexBrojevi= prinosiCursor.getColumnIndex("brojevi");
+                    try {
+                        String brojevi = prinosiCursor.getString(columnIndexBrojevi);
+                        String[] ulaz = brojevi.split(" ");
+                        List<Float> listaBrojeva = new ArrayList<>();
+
+                        for (String brojStr : ulaz) {
+                            try {
+                                float broj = Float.parseFloat(brojStr);
+                                listaBrojeva.add(broj);
+                            } catch (NumberFormatException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        prinosi3 = findViewById(R.id.prinosi3);
+                        ArrayAdapter<Float> prinosiAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, listaBrojeva);
+                        prinosi3.setAdapter(prinosiAdapter);
+
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(MainActivity.this, "GREŠKA", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });

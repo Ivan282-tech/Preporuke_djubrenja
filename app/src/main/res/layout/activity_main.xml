@@ -183,12 +183,25 @@
             android:inputType="none"
             android:hint="N"
             android:layout_marginBottom="8dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/darker_gray" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:text="PRVA GODINA:"
+            android:textStyle="bold"  />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="18dp"
-            android:text="Kulture: "/>
+            android:layout_marginTop="8dp"
+            android:text="Kultura:"/>
         <Spinner
             android:id="@+id/biljke"
             android:layout_width="match_parent"
@@ -205,7 +218,93 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:text="DRUGA GODINA:"
+            android:textStyle="bold"  />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:text="Kultura:"/>
+        <Spinner
+            android:id="@+id/biljke1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Mogući prinosi (t/ha):"/>
+        <Spinner
+            android:id="@+id/prinosi1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:text="TREĆA GODINA:"
+            android:textStyle="bold"  />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:text="Kultura:"/>
+        <Spinner
+            android:id="@+id/biljke2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Mogući prinosi (t/ha):"/>
+        <Spinner
+            android:id="@+id/prinosi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:text="ČETVRTA GODINA:"
+            android:textStyle="bold"  />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:text="Kultura:"/>
+        <Spinner
+            android:id="@+id/biljke3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18dp"
+            android:text="Mogući prinosi (t/ha):"/>
+        <Spinner
+            android:id="@+id/prinosi3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
         <Button
             android:id="@+id/dugmeUnesi"
             android:layout_width="match_parent"
