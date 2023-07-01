@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
                 Biljka selectedBiljka = (Biljka) parent.getItemAtPosition(position);
                 int selektovaniID = selectedBiljka.getId();
+
                 helper = new DataBaseHelper(MainActivity.this);
 
                 Cursor prinosiCursor = helper.uzmiPrinos(selektovaniID);

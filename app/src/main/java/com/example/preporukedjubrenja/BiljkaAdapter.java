@@ -27,6 +27,7 @@ public class BiljkaAdapter extends ArrayAdapter<Biljka> {
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         TextView textView = (TextView) super.getDropDownView(position, convertView, parent);
         textView.setText(getItem(position).toString());
+        textView.setTextSize(18);
         return textView;
 
     }
